@@ -1,4 +1,4 @@
-# Experiment 1: Blink an LED<sup>[1](#myfootnote1)</sup>
+# Experiment 1: Blink an LED Light<sup>[1](#myfootnote1)</sup>
 ## Introduction
 LEDs (light-emitting diodes) are small, powerful lights that are used in many different applications. To start off our experiments with the ESP8266, we will work on blinking an LED using a digital output.  This experiment will also walk you through coding uploading your first sketch with the Arduino IDE.
 
