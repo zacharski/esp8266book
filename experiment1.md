@@ -8,7 +8,7 @@ You will need the following parts:
 * 1x LED (Choose any color)
 * 1x 560Ω Resistor
 * 2x Jumper Wires
-![](combo.png)
+![](pics/combo.png)
 
 ## Hardware Hookup
 Ready to party? Components like resistors need to have their legs bent into 90° angles in order to correctly fit the breadboard sockets. You can also cut the legs shorter to make them easier to work with on the breadboard.
