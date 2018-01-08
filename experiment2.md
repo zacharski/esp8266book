@@ -79,6 +79,16 @@ When you hold down the push button, those warm fuzzy feelings from the first exp
 
 ![](pics/button.png)
 
+## Remixes
+### Twosies  - 25xp
+Add another LED and another button. Both LEDs should blink 200ms on and 200ms off only when both buttons are pressed. Otherwise both LEDs will be off.
+
+### Beyond Twosies - 20xp
+* When both buttons are pressed both LEDs should blink 200ms on and 200ms off
+* When only button 1 is pressed, LED 1 should be on (steady -- no blink)
+* When button 2 is pressed, LED 2 should be on (steady -- no blink)
+
+
 
 # Part 2 the button and the net
 For this part we are going to use a tutorial developed by Todd Treece at Adafruit. 
@@ -286,5 +296,16 @@ When you press the button on your Huzzah you should get a text message:
 
 Your Huzzah and button can be anywhere in the world (Where ever there is wifi) and you can get an sms when anyone presses the button!.
 
+## Remix - Dog Sitter 40xp
+When I am on vacation a dog sitter takes care of my two poodles.  I want to be notified via SMS (use your phone number) when the sitter presses a button. I want a device with two buttons (you can use a post-it note to label them ‘walked’ and ‘fed’.  
+
+* When both buttons are pressed I want the text “Bodhi and Roz fed and walked.” sent
+* When the fed button is pressed I want the text “Bodhi and Roz fed.”  sent.
+* When the walked button is pressed I want the text “Bodhi and Roz walked.”  sent.
+
+Instead of “Bodhi and Roz” feel free to use your pet’s name (or change the task to something different).
+
+![](pics/dogs.png)
+![](pics/dogs2.png)
 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski. Button press dashboard image by Todd Treece.
