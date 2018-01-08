@@ -8,7 +8,7 @@ You will need the following parts:
 * 1x LED (Choose any color)
 * 1x 560Ω Resistor
 * 2x Jumper Wires
-![](combo.png)
+![](pics/combo.png)
 
 ## Hardware Hookup
 Ready to party? Components like resistors need to have their legs bent into 90° angles in order to correctly fit the breadboard sockets. You can also cut the legs shorter to make them easier to work with on the breadboard.
@@ -22,7 +22,7 @@ Pay close attention to the LED. The negative side of the LED is the short leg, m
 Each experiment will have a Fritzing hook-up diagram. Connect the components to the breadboard and Photon RedBoard by following the Fritzing diagram below:
 
 
-![](experiment1small_bb.png)
+![](pics/experiment1small_bb.png)
 
 Having a hard time seeing the circuit? Click on the Fritzing diagram to see a bigger image.
 
@@ -35,7 +35,7 @@ Be sure to the polarity on the LED is correct. The longer lead should be connect
 
 Download and install the Arduino IDE Software from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
 
-![](arduino.png)
+![](pics/arduino.png)
 
 Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide)
 
@@ -65,11 +65,11 @@ Next, under the Tools menu under the **Board** submenu select **Adafruit HUZZAH 
 
 Then, check your program by clicking on the checkmark icon
 
-![](check.png)
+![](pics/check.png)
 
 The check is optional. It just checks your program for syntax errors. Next you can upload your program to your board by clicking on the arrow icon:
 
-![](load.png)
+![](pics/load.png)
 
 You now should have a blinking LED light.
 
