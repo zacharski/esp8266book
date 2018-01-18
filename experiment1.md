@@ -24,11 +24,11 @@ Each experiment will have a Fritzing hook-up diagram. Connect the components to 
 
 ![](pics/experiment1small_bb.png)
 
-Having a hard time seeing the circuit? Click on the Fritzing diagram to see a bigger image.
+Having a hard time seeing the circuit? Right click on the Fritzing diagram to see a bigger image and select "Open Image in New Tab"
 
 All jumper wires work the same. They are used to connect two points together. All the experiments will show the wires with different colored insulations for clarity, but using different combinations of colors is completely acceptable.
 
-Be sure to the polarity on the LED is correct. The longer lead should be connected to D0. You will need to slightly bend the longer leg so that both are the same length when placed int he breadboard.
+Be sure to the polarity on the LED is correct. The longer lead should be connected to pin 2. You will need to slightly bend the longer leg so that both are the same length when placed int he breadboard.
 
 
 ## Installing the software
