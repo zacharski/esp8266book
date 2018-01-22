@@ -37,7 +37,7 @@ Download and install the Arduino IDE Software from [https://www.arduino.cc/en/Ma
 
 ![](pics/arduino.png)
 
-Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide) under the headings **on't forget you will also need to install the SiLabs CP2104 Driver** and **Install the ESP8266 Board Package**.
+Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide) under the headings **Don't forget you will also need to install the SiLabs CP2104 Driver** and **Install the ESP8266 Board Package**.
 
 ## Write the program to blink the LED light.
 Open up the Arduino IDE (the program you just installed in the step above). Then, under the file menu select **New** and type in the following program
