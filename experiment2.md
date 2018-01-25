@@ -51,7 +51,7 @@ Add the push button to the same LED circuit from the first experiment. Follow th
 ## The code
 Copy and paste this code into the IDE. Then upload.
 
-  int led = 2;
+    int led = 2;
     int pushButton = 5;
 
     void setup() {
