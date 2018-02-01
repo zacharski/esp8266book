@@ -118,7 +118,7 @@ Next click on the Serial Monitor Icon in the IDE:
 
 A window should open displaying your MAC address. 
 
-Next, login to [myresnet.com](myresnet.com) and add a device (your Feather board) by entering in the Mac address.
+Next, login to [myresnet.com](http://myresnet.com) and add a device (your Feather board) by entering in the Mac address.
 
 
 
