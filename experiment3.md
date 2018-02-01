@@ -28,10 +28,6 @@ Add the push button to the same LED circuit from the first experiment. Follow th
 
 [link to larger picture](pics/ex3layout.png)
 
-> Pay special attention to the component’s markings indicating how to place it on the breadboard. Polarized components can only be connected to a circuit in one direction. Orientation matters for the following component: **LED**
-
-> While buttons aren't necessarily polarized (they can be flipped 180° and still work the same), they do have an orientation that is correct. The legs of the button protrude out of two sides of the button, while the other two side are bare. The sides with the legs should be on either side of the ravine on the breadboard.
-
 ## The code
 Copy and paste this code into the IDE. Then upload.
 
@@ -63,10 +59,7 @@ Copy and paste this code into the IDE. Then upload.
 ## What You Should See
 You should see the LED blink faster or slower in accordance with your potentiometer. If it isn’t working, make sure you have assembled the circuit correctly and verified and uploaded the code to your board, or see the troubleshooting section.
 
-
-
-[Click this link for video](https://photos.app.goo.gl/DmSFu852hYwmjV463)
-
+[Click this link for video](pics/experiment3.mp4)
 
 Demo for 15xp
 
