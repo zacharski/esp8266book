@@ -59,7 +59,7 @@ Copy and paste this code into the IDE. Then upload.
 ## What You Should See
 You should see the LED blink faster or slower in accordance with your potentiometer. If it isn’t working, make sure you have assembled the circuit correctly and verified and uploaded the code to your board, or see the troubleshooting section.
 
-[Click this link for video](pics/experiment3.mp4)
+[Click this link for video](https://photos.app.goo.gl/KSsPJDpif7aGnuTN2)
 
 Demo for 15xp
 
