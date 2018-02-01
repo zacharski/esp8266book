@@ -24,11 +24,11 @@ Each experiment will have a Fritzing hook-up diagram. Connect the components to 
 
 ![](pics/experiment1small_bb.png)
 
-Having a hard time seeing the circuit? Click on the Fritzing diagram to see a bigger image.
+Having a hard time seeing the circuit? Right click on the Fritzing diagram to see a bigger image and select "Open Image in New Tab"
 
 All jumper wires work the same. They are used to connect two points together. All the experiments will show the wires with different colored insulations for clarity, but using different combinations of colors is completely acceptable.
 
-Be sure to the polarity on the LED is correct. The longer lead should be connected to D0. You will need to slightly bend the longer leg so that both are the same length when placed int he breadboard.
+Be sure to the polarity on the LED is correct. The longer lead should be connected to pin 2. You will need to slightly bend the longer leg so that both are the same length when placed int he breadboard.
 
 
 ## Installing the software
@@ -37,7 +37,7 @@ Download and install the Arduino IDE Software from [https://www.arduino.cc/en/Ma
 
 ![](pics/arduino.png)
 
-Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide)
+Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide) under the headings **Don't forget you will also need to install the SiLabs CP2104 Driver** and **Install the ESP8266 Board Package**.
 
 ## Write the program to blink the LED light.
 Open up the Arduino IDE (the program you just installed in the step above). Then, under the file menu select **New** and type in the following program
