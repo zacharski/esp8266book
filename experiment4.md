@@ -31,9 +31,11 @@ Fortunately, we don't need to write code that quickly turns the LED on and off. 
 	
 we are going to use
 
-	analogWrite(led, 255);
+	analogWrite(led, 1023);
 	
-The number 255 represents how bright we want the LED. 0 means the LED is off, 255 means the LED is at its brightest, 125 means mid brightness --- you get the idea.
+The number 1023 represents how bright we want the LED. 0 means the LED is off, 1023 means the LED is at its brightest, 512 means mid brightness --- you get the idea.
+
+> You may be wondering why 1023? Wouldn't it better to use some normal number like 1000? Here is the scoop. Computers operate on the binary number system. I will not go into too much detail, but powers of 2 are more natural: 2, 4, 8, 16, 32 ...   Now the range 0 to 1023 represents 1024 distinct values and 1024 is a power of two-- 2^10 IS 1024. That is probably more than you want to know.
 
 ## A sample program to have a mid-brightness LED light.  (
 Open up the Arduino IDE (the program you just installed in the step above). Then, under the file menu select **New** and type in the following program
@@ -46,7 +48,7 @@ Open up the Arduino IDE (the program you just installed in the step above). Then
 	}
 
 	void loop() {
-	  analogWrite(led, 100);
+	  analogWrite(led, 512);
 	}
 	
 ## Multi-LED bonuses for the remixes below
@@ -94,13 +96,172 @@ If you understand this code, it should provide a clue how to. do the loopy pulse
  
 # Part 2 The Magical Mysterious World of the Multicolor LED
 ![](pics/rgb.jpg)
-In this part of the lab we are going to be working with what is called an RGB LED (RGB stands for Red, Green, Blue). There are 4 wires sticking out of this LED. The one we have in our kit is called a Common-Anode type, which simply means that we connect the long leg to 3V.  (The other type is the Common-Cathode type where we connect the long leg to ground)Here is a picture that may help:
+In this part of the lab we are going to be working with what is called an RGB LED (RGB stands for Red, Green, Blue). There are 4 wires sticking out of this LED. The one we have in our kit is called a Common-Anode type, which simply means that we connect the long leg to 3V.  (The other type is the Common-Cathode type where we connect the long leg to ground) Here is a picture that may help:
 
 ![](pics/common_anode_rgb_led.png)
 
+Having a common-anode RGB LED makes life a tad more ~~difficult~~ interesting. In the above example if we wanted the `led` off we would write:
+
+	analogWrite(led, 0);
+
+and if we wanted full brightness we had 
+
+	analogWrite(led, 1023);
+
+### Here's what I don't like about common-anode LEDs.	
+With a common-anode LED things are topsy-turvy. To have a `green` led off we would have
+
+	analogWrite(green, 1023);
+	
+and if we wanted full brightness we would have  
+
+	analogWrite(green, 0);
+
+We could also use digitalWrite. In this case 
+
+	digitalWrite(green, HIGH)
+	
+would be off and 
+
+	digitalWrite(green, LOW);
+	
+would be on.
+## Fiddling with colors
+In this single LED we can fiddle with the brightness of **R**ed, **G**reen, and **B**lue.  For any color we would specify values for each of these. For example, if we wanted solid blue we might have:
+
+	analogWrite(red, 1023);
+	analogWrite(green, 1023);
+	analogWrite(blue, 0);
+
+Magenta (aka Fushia) is an equal mix of red and blue so if we wanted a bright magenta we might have:
+![](pics/magenta.png)
+
+	analogWrite(red, 0);
+	analogWrite(green, 1023);
+	analogWrite(blue, 0);
+
+If you wanted a dimmer magenta you could do:
+
+	analogWrite(red, 300);
+	analogWrite(green, 1023);
+	analogWrite(blue, 300);
+
+Pink is mostly red with some green and blue:
+
+
+	analogWrite(red, 1023);
+	analogWrite(green, 800);
+	analogWrite(blue, 800);
+
+
+**Let's get to work!**
+
+## Hardware hookup
 
 ![](pics/es4b.png)
 
 [link to larger picture](pics/es4b.png)
+
+## The code
+
+And here is code that will display 8 colors just using digitalWrite:
+
+
+    int RED_PIN = 4;
+    int GREEN_PIN = 5;
+    int BLUE_PIN = 2;
+
+
+    int DISPLAY_TIME = 100;  // In milliseconds
+
+
+    void setup()
+    {
+      pinMode(RED_PIN, OUTPUT);
+      pinMode(GREEN_PIN, OUTPUT);
+      pinMode(BLUE_PIN, OUTPUT);
+    }
+
+
+    void loop()
+    {
+
+      mainColors();
+    }
+
+
+    // Here's the mainColors() function we've written.
+
+    // This function displays the eight "main" colors that the RGB LED
+    // can produce. 
+
+    void mainColors()
+    {
+      // Off (all LEDs off):
+
+      digitalWrite(RED_PIN, HIGH);
+      digitalWrite(GREEN_PIN, HIGH);
+      digitalWrite(BLUE_PIN, HIGH);
+
+      delay(1000);
+
+      // Red (turn just the red LED on):
+
+      digitalWrite(RED_PIN, LOW);
+      digitalWrite(GREEN_PIN, HIGH);
+      digitalWrite(BLUE_PIN, HIGH);
+
+      delay(1000);
+
+      // Green (turn just the green LED on):
+
+      digitalWrite(RED_PIN, HIGH);
+      digitalWrite(GREEN_PIN, LOW);
+      digitalWrite(BLUE_PIN, HIGH);
+
+      delay(1000);
+
+      // Blue (turn just the blue LED on):
+
+      digitalWrite(RED_PIN, HIGH);
+      digitalWrite(GREEN_PIN, HIGH);
+      digitalWrite(BLUE_PIN, LOW);
+
+      delay(1000);
+
+      // Yellow (turn red and green on):
+
+      digitalWrite(RED_PIN, LOW);
+      digitalWrite(GREEN_PIN, LOW);
+      digitalWrite(BLUE_PIN, HIGH);
+
+      delay(1000);
+
+      // Cyan (turn green and blue on):
+
+      digitalWrite(RED_PIN, HIGH);
+      digitalWrite(GREEN_PIN, LOW);
+      digitalWrite(BLUE_PIN, LOW);
+
+      delay(1000);
+
+      // Purple (turn red and blue on):
+
+      digitalWrite(RED_PIN, LOW);
+      digitalWrite(GREEN_PIN, HIGH);
+      digitalWrite(BLUE_PIN, LOW);
+
+      delay(1000);
+
+      // White (turn all the LEDs on):
+
+      digitalWrite(RED_PIN, LOW);
+      digitalWrite(GREEN_PIN, LOW);
+      digitalWrite(BLUE_PIN, LOW);
+
+      delay(1000);
+    }
+
+And 
 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski
