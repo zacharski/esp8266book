@@ -262,6 +262,41 @@ And here is code that will display 8 colors just using digitalWrite:
       delay(1000);
     }
 
-And 
+###  Red and Blue Passing in the Night
+Here is some code that pulses the red part of the multicolor LED (and introduces the `for` loop):
+
+    int redLed = 4;
+    int greenLed =5;
+    int blueLed = 2;
+    int display_time = 2; //in milliseconds
+    int redColor = 0;
+    int blueColor = 1023;
+
+    void setup() {
+      pinMode(redLed, OUTPUT);
+      pinMode(greenLed, OUTPUT);
+      pinMode(blueLed, OUTPUT);
+
+    }
+
+    void loop(){
+      // first turn off the green and blue LEDs
+      analogWrite(greenLed, 1023);
+      analogWrite(blueLed, 1023);
+      for (int i = 0; i < 1024; i += 1){
+        analogWrite(redLed, redColor + i);
+        delay(display_time);
+      }
+    }
+
+As you can see, the red light starts at its brightness (value 0) and quickly dims (goes to 1023).
+
+#### part 1 - 10xp
+Can you modify the code so that as the red dims the blue increases in brightness? This involves moving and editing exactly one line of code.
+
+### part 2: red and blue passing in the night - 20xp 
+Ok. Part 1 had you move from red to blue and then there was a sudden jump back to red. Can you modify the code so that the light gradually goes from red to blue and then gradually back again? 
+
+<font color='white>oneone oneoneone</font>
 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski
