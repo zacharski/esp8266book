@@ -65,7 +65,7 @@ So constantly off - low - mid - high - off - low - mid - high …
 ## Remix 2  Potentiometer-brightness 20xp
 
 Can you write code so that a potentiometer controls the brightness of the LEDs?
-This code is pretty short. You will have 1 or 2 lines inside the setup function and 2 to 3 lines of code inside the loop function.
+This code is pretty short. You will have 1 or 2 lines inside the setup function and 2 to 3 lines of code inside the loop function.  When the potentiometer if all the way to the left, the led is off, as you turn the potentiometer gradually to the right the led gets gradually brighter.
 
 ## Remix 4  a for loopy pulsey light thing 25xp
 
@@ -262,40 +262,73 @@ And here is code that will display 8 colors just using digitalWrite:
       delay(1000);
     }
 
-###  Red and Blue Passing in the Night
+###  Dimmer Red
 Here is some code that pulses the red part of the multicolor LED (and introduces the `for` loop):
 
-    int redLed = 4;
-    int greenLed =5;
-    int blueLed = 2;
-    int display_time = 2; //in milliseconds
-    int redColor = 0;
-    int blueColor = 1023;
+		int redLed = 4;
+		int greenLed =5;
+		int blueLed = 2;
+		int display_time = 2; //in milliseconds
+		int redColor = 0;
+		int blueColor = 0;
+		int greenColor = 0;
 
-    void setup() {
-      pinMode(redLed, OUTPUT);
-      pinMode(greenLed, OUTPUT);
-      pinMode(blueLed, OUTPUT);
+		void setup() {
+		  pinMode(redLed, OUTPUT);
+		  pinMode(greenLed, OUTPUT);
+		  pinMode(blueLed, OUTPUT);
 
-    }
+		}
 
-    void loop(){
-      // first turn off the green and blue LEDs
-      analogWrite(greenLed, 1023);
-      analogWrite(blueLed, 1023);
-      for (int i = 0; i < 1024; i += 1){
-        analogWrite(redLed, redColor + i);
-        delay(display_time);
-      }
-    }
+		void dimmerRed(){
+		  // first turn off the green and blue LEDs
+		  analogWrite(greenLed, 1023);
+		  analogWrite(blueLed, 1023);
+		  
+		  // set the base value of the red led
+		  // it should be at its brightest - so 0
+		  redColor = 0;
+
+		  // now make red dimmer and dimmer
+		  for (int i = 0; i < 1024; i += 1){
+		    analogWrite(redLed, redColor + i);
+		    delay(display_time);
+		  }   
+		}
+
+		void loop(){
+		  dimmerRed();
+		}
+
 
 As you can see, the red light starts at its brightness (value 0) and quickly dims (goes to 1023).
 
-#### part 1 - 10xp
-Can you modify the code so that as the red dims the blue increases in brightness? This involves moving and editing exactly one line of code.
+Let's look at the code for the function `dimmerRed`. 
+
+* The first things we do is turn off  green and blue by using `analogWrite(greenLed, 1023)` and `analogWrite(blueLed, 1023)`
+* Since we want the red part of the led to start at its brightest, we set the variable `redColor` initially to zero.
+* Now we start our `for` loop. The first time through the loop `i` is 0, the next time it is 1, then 2 until `i` equals 1024 and then the loop stops.
+* Next we have `analogWrite(redLed, redColor + i);`  Initially redColor is 0 and i is 0 so we set the redLed to brightness 0. The next time through the loop i is 1 so we set the brightness to 1 and so on.
+
+## Red and Blue Passing in the Night
+#### part 1  redToBlue- 10xp
+Can you write a function `redToBlue` so that as the red dims the blue increases in brightness?  The format of the function is similar to that for `dimmerRed`. Once you've written that function change the loop function to:
+
+		void loop(){
+		  redToBlue();
+		}
+to test it.
+
 
 ### part 2: red and blue passing in the night - 20xp 
-Ok. Part 1 had you move from red to blue and then there was a sudden jump back to red. Can you modify the code so that the light gradually goes from red to blue and then gradually back again? 
+Ok. Part 1 had you move from red to blue and then there was a sudden jump back to red. Can you modify the code so that the light gradually goes from red to blue and then gradually back again? This may involve writing another function.
+
+### Part 3: Roy G Biv  - 10-20xp
+Now we want the multicolor led to go gradually from red to green then green to blue and then blue to red? Think about how you would break this problem down into simple functions. 10xp for a solution that works, 20xp for code that breaks this task down into simpler subtasks.
+
+### Part 4: Roy G Biv R Vib G Yor - 15xp
+This is a puzzle. What do Mikaela and I want to see?
+
 
 <font color='white>oneone oneoneone</font>
 
