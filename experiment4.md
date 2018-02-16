@@ -69,7 +69,7 @@ So constantly off - low - mid - high - off - low - mid - high …
 Can you write code so that a potentiometer controls the brightness of the LEDs?
 This code is pretty short. You will have 1 or 2 lines inside the setup function and 2 to 3 lines of code inside the loop function.  When the potentiometer if all the way to the left, the led is off, as you turn the potentiometer gradually to the right the led gets gradually brighter.
 
-## Remix 4  a for loopy pulsey light thing 25xp
+## Remix 4  a for loopy pulsey light thing 20xp
 
 Can you write code so that the lights start dark, gradually increase in brightness and then gradually dim and then repeat?
 
