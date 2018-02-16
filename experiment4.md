@@ -53,8 +53,10 @@ Open up the Arduino IDE (the program you just installed in the step above). Then
 	
 ## Multi-LED bonuses for the remixes below
 
-1. for each of the remixes below you will get 25% xp more for each additional LED light you have up to a maximum of 3 total LEDs. For example, if you demo remix 1 with 3 leds you will get 30xp. The good news is that if you wire those three LEDs once, you do not have to do any rewiring of those LEDs for the other remix.
-2. You will get 50% more if you use variables. These includes using variable names that make sense to people.
+1. for each of the remixes below you will get 25% xp more if you use 3 LEDs. For example, if you demo remix 1 with 3 leds you will get 250xp. The good news is that if you wire those three LEDs once, you do not have to do any rewiring of those LEDs for the other remix.
+2. You will get 25% more if you use variables. These includes using variable names that make sense to people.
+
+
 
 
 ## Remix 1 Loopy-Lights™    20xp
