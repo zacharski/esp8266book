@@ -332,6 +332,6 @@ Now we want the multicolor led to go gradually from red to green then green to b
 This is a puzzle. What do Mikaela and I want to see?
 
 
-<font color='white>oneone oneoneone</font>
+
 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski
