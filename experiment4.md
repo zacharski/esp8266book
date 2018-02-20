@@ -331,7 +331,8 @@ Now we want the multicolor led to go gradually from red to green then green to b
 ### Part 4: Roy G Biv R Vib G Yor - 15xp
 This is a puzzle. What do Mikaela and I want to see?
 
-
+# Controlling Color from Your Phone - 15xp
+Follow the [Adafruit Tutorial](https://learn.adafruit.com/adafruit-io-basics-color/overview).
 
 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski
