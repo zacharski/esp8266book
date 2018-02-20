@@ -5,3 +5,6 @@
 ## [Experiment 4: The Magical Multicolor LED](experiment4)
 ## [Experiment 5: The Nightlight - a short photoresistor experiment](experiment5)
 
+
+alternative board manager URL: https://github.com/esp8266/Arduino/releases/download/2.3.0/package_esp8266com_index.json
+
