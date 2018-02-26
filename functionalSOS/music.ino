@@ -48,7 +48,7 @@ void setup()
 
 void loop() 
 {
-
+    song1();
 }
 
 
