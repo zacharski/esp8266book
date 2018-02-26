@@ -1,4 +1,4 @@
-# Experiment 6: Speakers and Buzzers<sup>[1](#myfootnote1)</sup>
+# Experiment 6: Finally some Music<sup>[1](#myfootnote1)</sup>
 In this experiment we are going to learn how to make a speaker or buzzer click. Now a click may not sound like much :-) but when we put clicks together we can make more interesting sounds. For example, if we have 440 clicks in a second we have the note 'A'.   If we have 3 short periods of it clicking at 392 clicks per second followed by a period of it clicking at 261 clicks per second we have the opening four notes of Beethoven's Fifth Symphony (albeit  in a musical greeting card quality). Let's get clicking.
 
 ![](pics/speakBuzz.png)
@@ -40,3 +40,5 @@ Can you write code to have the buzzer play a recognizable (and correct) tune tha
     * entire song plays - not just a snippet
 .
 
+
+<a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski

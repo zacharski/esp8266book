@@ -4,6 +4,7 @@
 ## [Experiment 3: Turning the knob - Potentiometer](experiment3)
 ## [Experiment 4: The Magical Multicolor LED](experiment4)
 ## [Experiment 5: The Nightlight - a short photoresistor experiment](experiment5)
+## [Experiment 6: Finally some Music!](experiment6)
 
 
 alternative board manager URL: https://github.com/esp8266/Arduino/releases/download/2.3.0/package_esp8266com_index.json
