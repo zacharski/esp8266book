@@ -4,8 +4,9 @@
 
 * Preliminaries - 15xp
 * Modulo Challenge - 25xp
-* M&M Dispenser - 40
-* 
+* M&M Dispenser - 40xp
+* Bonus 25-60xp
+* TOTAL 105-140xp
 
 Today we are going to look at a servo. In particular, we are going to look at how a servo can deliver us chocolate. ([Here is a link to my favorite song about chocolate --- Warning: not for the weak](https://www.youtube.com/watch?v=WIKqgE4BwAY). And here are the [lyrics](https://genius.com/Babymetal-gimme-chocolate-english-translation-lyrics))
 
