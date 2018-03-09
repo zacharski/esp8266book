@@ -7,7 +7,7 @@
 * M&M Dispenser - 40
 * 
 
-Today we are going to look at a servo. 
+Today we are going to look at a servo. In particular, we are going to look at how a servo can deliver us chocolate. ([Here is a link to my favorite song about chocolate --- Warning: not for the weak](https://www.youtube.com/watch?v=WIKqgE4BwAY). And here are the [lyrics](https://genius.com/Babymetal-gimme-chocolate-english-translation-lyrics))
 
 
 ![](pics/servo.png)
