@@ -37,8 +37,7 @@ Before you continue make sure to put an arm on the servo. It just makes it more 
 
 ### The Code
 
-#include <Servo.h>
-
+    #include <Servo.h> 
     Servo myservo;
     int button = 2;
     int servoPin = 16;
@@ -259,3 +258,4 @@ Instead of an edge of the table dispenser, can you make a more interesting one? 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-7-automatic-fish-feeder).  This chocolate remix by Ron Zacharski
 
 
+  
