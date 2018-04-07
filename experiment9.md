@@ -1,4 +1,4 @@
-# Experiment 9: NeoPixel<sup>[1](#myfootnote1)</sup>
+# Experiment 9: NeoPixel<sup>[1](#myfootnote1)</sup> 100xp
 
 ![](pics/neo1.jpg)
 The above is a picture of the neopixel we will be using.  NeoPixels come in a variety of shapes and sizes:
@@ -8,7 +8,7 @@ The above is a picture of the neopixel we will be using.  NeoPixels come in a va
 Each NeoPixel contains a number of multicolor LED lights -- each of which is called a **pixel**. The collection of pixels on a NeoPixel is called a **strip**. This terminology will become important when we start coding.
 
 
-## Step 1 Soldering
+## Step 1 Soldering 
 ![](pics/soldering.png)
 
 The first thing you need to do is solder wires to your NeoPixel. You will be connecting wires to the Ground, Power 5v, and the Data In connectors. We will help you with this.
@@ -173,6 +173,8 @@ step | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
 1 | * | | | * | | | *| | | *| | | *| | | *
 2 | *  | * | | | * | | | *| | | *| | | *| | 
 3 | | * |* | | | * | | | *| | | *| | | *| | 
+
+
 ![](pics/p3pixel.png)
 
 or the same idea represented by a picture.
@@ -248,7 +250,7 @@ and something similar in the turn off loop  Add plus `p` to both lines:
 #### substep 6 Add more colors.  It should be most awesome
 Add at least 3 more `theaterChase` lines to the loop function to display different colors.
 
-### Remix 4. Red and Blue Chasing Each Other in the Night  (medium) - 20xp
+### Remix 4. Red and Blue Chasing Each Other in the Night  (medium) - 25xp
 For this remix we are going to combine your red and blue passing in the night function with the `theaterChase` one. Let's call it:
 
 	void redAndBlueChasing(int wait){
