@@ -7,6 +7,7 @@
 ## [Experiment 6: Finally some Music!](experiment6)
 ## [Experiment 7: An M&M Dispenser!](experiment7)
 ## [Experiment 8: Ping Ping Ping and a Theremin](experiment8)
+## [Experiment 9: NeoPixel](experiment9)
 
-alternative board manager URL: https://github.com/esp8266/Arduino/releases/download/2.3.0/package_esp8266com_index.json
+
 
