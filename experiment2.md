@@ -34,7 +34,7 @@ Copy and paste this code into the IDE. Then upload.
 
     void setup() {
       pinMode(led, OUTPUT);       // pin 2 is an output pin 
-      pinMode(pushButton, INPUT); // pin 5 is an input --the button
+      pinMode(pushButton, INPUT_PULLUP); // pin 5 is an input --the button
     }
 
     void loop() {
@@ -264,6 +264,15 @@ If you are working on this project on your home network you should set these acc
 
 	#define WIFI_SSID       "Union"
 	#define WIFI_PASS       "qwerty"
+
+### Step 5: INPUT_PULLUP
+The Adafruit code assumes you are using a pullup resistor. In our lecture we found that we could eliminate that resistor by editing one line of code. In this case we want to edit the file `adafdruitio_06_digital_in` and change line 36 from
+
+     pinMode(BUTTON_PIN, INPUT);
+     
+to 
+
+      pinMode(BUTTON_PIN, INPUT_PULLUP);
 
 ## What You Should See
 When you press the button your dashboard should indicate the press:
