@@ -53,7 +53,7 @@ Open up the Arduino IDE (the program you just installed in the step above). Then
 	
 ## Multi-LED bonuses for the remixes below
 
-1. for each of the remixes below you will get 25% xp more if you use 3 LEDs. For example, if you demo remix 1 with 3 leds you will get 250xp. The good news is that if you wire those three LEDs once, you do not have to do any rewiring of those LEDs for the other remix.
+1. for each of the remixes below you will get 25% xp more if you use 3 LEDs. For example, if you demo remix 1 with 3 leds you will get 25xp. The good news is that if you wire those three LEDs once, you do not have to do any rewiring of those LEDs for the other remix.
 2. You will get 25% more if you use variables. These includes using variable names that make sense to people.
 
 
@@ -67,7 +67,7 @@ So constantly off - low - mid - high - off - low - mid - high …
 ## Remix 2  Potentiometer-brightness 20xp
 
 Can you write code so that a potentiometer controls the brightness of the LEDs?
-This code is pretty short. You will have 1 or 2 lines inside the setup function and 2 to 3 lines of code inside the loop function.  When the potentiometer if all the way to the left, the led is off, as you turn the potentiometer gradually to the right the led gets gradually brighter.
+This code is pretty short. You will have 1 or 2 lines inside the setup function and **2 to 3 lines of code inside the loop function**.  When the potentiometer if all the way to the left, the led is off, as you turn the potentiometer gradually to the right the led gets gradually brighter.
 
 ## Remix 4  a for loopy pulsey light thing 20xp
 
@@ -102,6 +102,15 @@ In this part of the lab we are going to be working with what is called an RGB LE
 
 ![](pics/common_anode_rgb_led.png)
 
+### Let's pause and look at that picture
+
+* We are going to connect. the + pin to 3v on our exp8266
+* The R (red) pin we will connected through a resistor to an i/o pin on the esp8266 (pin 5 for example)
+* The G (green) pin will be similarly connected
+* The B (blue) pin will also be connected in that way.
+* And to make things easier we will define a variable to the pins that each are connected to (`int red = 5` for example)
+
+### Some slight challenges with a common-anode LED.
 Having a common-anode RGB LED makes life a tad more ~~difficult~~ interesting. In the above example if we wanted the `led` off we would write:
 
 	analogWrite(led, 0);
@@ -336,3 +345,4 @@ Follow the [Adafruit Tutorial](https://learn.adafruit.com/adafruit-io-basics-col
 
 
 <a name="myfootnote1">1</a>: Tutorials are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original page at [Sparkfun Inventor's Kit for Photon](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-photon-experiment-guide/experiment-1-hello-world-blink-an-led).  This slight remix by Ron Zacharski
+a
