@@ -32,12 +32,32 @@ Be sure to the polarity on the LED is correct. The longer lead should be connect
 
 
 ## Installing the software
+There are three things you need to install 
+
+1. The Arduino IDE
+2. The USB driver (SiLabs CP2104 driver)
+3. The ESP8266 Board Package
+
+### Step 1. Installing the Arduino IDE.
+This step is the easiest of the three. The term **IDE** is a standard computer science one meaning *Integrated Development Environment*. * It's sort of a specialized text editor that 
+
+1. enables you to type in code and save it to a file. Much like Microsoft Word or Mac Pages.
+2. converts that code into a form that can be read by the Feather Huzzah board.
+3. transfers the converted code to the Huzzah.
 
 Download and install the Arduino IDE Software from [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
 
 ![](pics/arduino.png)
 
-Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide) under the headings **Don't forget you will also need to install the SiLabs CP2104 Driver** and **Install the ESP8266 Board Package**.
+Now you need to install an Ardiuno IDE add-on that enables us to use our processor boards. 
+
+### Step 2 Installing the SilLabs Driver 
+
+The instructions are [here](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#using-arduino-ide) under the headings **Don't forget you will also need to install the SiLabs CP2104 Driver**,
+
+### Step 3 Installing the ESP8266 Board Package
+Instructions for installing this package are in the section [**Install the ESP8266 Board Package**](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/pinouts?view=all#install-the-esp8266-board-package-6-10)
+
 
 ## Write the program to blink the LED light.
 Open up the Arduino IDE (the program you just installed in the step above). Then, under the file menu select **New** and type in the following program
