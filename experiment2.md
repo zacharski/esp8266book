@@ -3,19 +3,19 @@
 ## Introduction
 Now that you have conquered blinking an LED and know what an output is, it is time to learn inputs!
 
-In this circuit, we’ll be introducing one of the most common and simple inputs – a push button – by using a digital input. Just like the LED, the push button is a basic component that is used in almost everything. The way a push button works with your Photon is that when the button is pushed, the voltage goes LOW. You Photon reads this and reacts accordingly. RedBoard Photon has internal pull-up resistor, which keeps the voltage HIGH when you’re not pressing the button.
+In this circuit, we’ll be introducing one of the most common and simple inputs – a push button – by using a digital input. Just like the LED, the push button is a basic component that is used in almost everything. The way a push button works with your esp8266 board is that when the button is pushed, the voltage goes LOW. Your board reads this and reacts accordingly. It has an internal pull-up resistor, which keeps the voltage HIGH when you’re not pressing the button.
 
 ### Parts Needed
 You will need the following parts:
 
 * 1x LED
 * 1x Push Button
-* 1x 560Ω Resistor (green blue brown)
+* 1x 330 Resistor (orange orange brown)
 * 4x Jumper Wires
 ![](pics/e2parts.png)
 
 ## Suggested Reading
-* [Switch Basics](https://learn.sparkfun.com/tutorials/switch-basics) – The push button is a momentary switch. Momentary switches are switches which only remain in their on state as long as they’re being actuated (pressed, held, magnetized, etc.). Learn more about the different types of switches.
+* **Switch Basics** – The push button is a momentary switch. Momentary switches are switches which only remain in their on state as long as they’re being actuated (pressed, held, magnetized, etc.). Learn more about the different types of switches at [this Sparkfun site.](https://learn.sparkfun.com/tutorials/switch-basics)
 
 
 ## Hardware Hookup
@@ -77,7 +77,7 @@ In the line:
 
 we set the value of `pushButtonState` to whatever `digitalRead` reads. If the button is pressed then `pushButtonState` is set to `LOW` if the button is not pressed  `pushButtonState` is set to `HIGH`
 # `if` statements
-Imagine if your friend Clara said *If Ann goes to the party I will, else I will stay home*. Now let me ask you a question. Barring unforeseen circumstances, if we see Ann at the party do we think Clara is there?  And a second question. If we know Ann didn't go, (and again barring unforeseen circumstances) do we think Clara went to the party?
+Imagine if your friend Clara said *I'll go to the party if Ann goes, else I'll stay home*. Now let me ask you a question. Barring unforeseen circumstances, if we see Ann at the party do we think Clara is there?  And a second question. If we know Ann didn't go, (and again barring unforeseen circumstances) do we think Clara went to the party?
 
 Congratulations. You have fantastic intuitions about if-else statements.  Now let's look at this part of the code:
 
@@ -105,6 +105,17 @@ The braces (`{}`) delimited the block of code that should be executed if the `if
 
 If the button is not pressed we only perform the `else` block which turns off the led.
 
+Again, the braces (`{}`) delimited the block of code that should be executed if the `if` statement is true. Suppose we want to turn on the `redLED` and `blueLED` and turn off the `greenLED` if the button is pressed. In that case we would put all three statements inside the braces {}: 
+
+      if (pushButtonState == LOW) {
+        //we pushed the button
+        digitalWrite(redLED, HIGH);   //so turn on the redLED
+        digitalWrite(blueLED, HIGH);  //so turn on the blueLED
+        digitalWrite(greenLED, HIGH); //so turn off the greenLED
+       }
+ 
+
+
 
 ### question
 
@@ -125,9 +136,147 @@ What does the following do?
 
 expression | name | example | meaning
 :---: | :---: |  :--: | :---:
-== | EQUAL. | age == 21 | is the value of age equal to 21
+== | EQUAL## a wrinkle
+Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
+
+	if temperature is greater than 90 {
+	    turn on led1
+	    turn on led2
+	}
+	else if the temperature is greater than 70 {
+	     turn on led1
+	     turn off led2
+	}
+	else {
+	   turn off led1
+	   turn off led2
+	}
+
+I am hoping that makes some sense to you. Now let's convert that description to code
+
+
+	if (temperature > 90) {
+	    digitalWrite(led1, HIGH);
+	    digitalWrite(led2, HIGH);
+	}
+	else if (temperature > 70) {
+	     digitalWrite(led1, HIGH);
+	     digitalWrite(led1, LOW);
+	}
+	else {
+	   digitalWrite(led1, LOW);
+	   digitalWrite(led1, LOW);
+	}
+
+. | age == 21 | is the value of age equal to 21
 != | NOT EQUAL | age != 21 | is the value of age not equal to 21
 <  | LESS THAN | temperature < 80 | is temperature less than 80
+expression | name | example | meaning
+138
+:---: | :---: |  :--: | :---:
+139
+== | EQUAL## a wrinkle
+140
+Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
+141
+​
+142
+        if temperature is greater than 90 {
+143
+            turn on led1
+144
+            turn on led2
+145
+        }
+146
+        else if the temperature is greater than 70 {
+147
+             turn on led1
+148
+             turn off led2
+149
+        }
+150
+        else {
+151
+           turn off led1
+152
+           turn off led2
+153
+        }
+154
+​
+155
+I am hoping that makes some sense to you. Now let's convert that description to code
+156
+​
+157
+​
+158
+        if (temperature > 90) {
+159
+            digitalWrite(led1, HIGH);
+160
+            digitalWrite(led2, HIGH);
+161
+        }
+162
+        else if (temperature > 70) {
+163
+             digitalWrite(led1, HIGH);
+164
+             digitalWrite(led1, LOW);
+165
+        }
+166
+        else {
+167
+           digitalWrite(led1, LOW);
+168
+           digitalWrite(led1, LOW);
+169
+        }
+170
+​
+171
+. | age == 21 | is the value of age equal to 21
+172
+!= | NOT EQUAL | age != 21 | is the value of age not equal to 21
+173
+<  | LESS THAN | temperature < 80 | is temperature less than 80
+174
+> | GREATER THAN | temperature > 80 | is temperature greater than 80
+175
+<= | LESS THAN OR EQUAL TO | temperature <= 90 | is the temperature less than or equal to 90 
+176
+>= | GREATER THAN OR EQUAL TO | temp >= 90 | is the temp greater than or equal to 90
+177
+​
+178
+So, for example, if the variable `temperature` contained the current temperature then
+179
+​
+180
+​
+181
+      if (temperature < 90) {}
+182
+        digitalWrite(led, HIGH); //so turn on the LED
+183
+      }
+184
+      else
+185
+      {
+186
+        digitalWrite(led, LOW);
+187
+      }
+188
+​
+189
+would turn on the led if the temperature was less than 90.
+190
 > | GREATER THAN | temperature > 80 | is temperature greater than 80
 <= | LESS THAN OR EQUAL TO | temperature <= 90 | is the temperature less than or equal to 90 
 >= | GREATER THAN OR EQUAL TO | temp >= 90 | is the temp greater than or equal to 90
@@ -144,6 +293,63 @@ So, for example, if the variable `temperature` contained the current temperature
       }
 
 would turn on the led if the temperature was less than 90.
+
+
+
+
+## How to use Logic like a Vulcan:
+One of the things that makes the Adafruit HUZZAH board (and any computer) so useful is that it can make complex decisions based on the input it’s getting. For example, you could make a thermostat that turns on a heater if it gets too cold, or a fan if it gets too hot, and it could even water your plants if they get too dry. In order to make such decisions, the programming language provides a set of logic operations that let you build complex “if” statements. They include:
+
+expression | name | meaning
+:---: | :---: | :---:
+&&	| AND	| A && B is true if BOTH A and B are TRUE.
+\|\|	| OR	|  A \|\| B is true if A or B or BOTH are TR## a wrinkle
+Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
+
+	if temperature is greater than 90 {
+	    turn on led1
+	    turn on led2
+	}
+	else if the temperature is greater than 70 {
+	     turn on led1
+	     turn off led2
+	}
+	else {
+	   turn off led1
+	   turn off led2
+	}
+
+I am hoping that makes some sense to you. Now let's convert that description to code
+
+
+	if (temperature > 90) {
+	    digitalWrite(led1, HIGH);
+	    digitalWrite(led2, HIGH);
+	}
+	else if (temperature > 70) {
+	     digitalWrite(led1, HIGH);
+	     digitalWrite(led1, LOW);
+	}
+	else {
+	   digitalWrite(led1, LOW);
+	   digitalWrite(led1, LOW);
+	}
+
+UE.
+!	| NOT	| !A is TRUE if A is FALSE. !A is FALSE if A is TRUE.
+
+You can combine these functions to build complex if() statements. For example suppose we want to turn on an led only if the temperature is between 65 and 75 inclusive and the led should be off otherwise. We can do this using the `AND` operator `&&`:
+
+
+      if ((temperature >= 65)  && (temperature) <=75){
+        digitalWrite(led, HIGH); //so turn on the LED
+      }
+      else
+      {
+        digitalWrite(led, LOW);
+      }
+
+Using these logic operators, you can program your Feather HUZZAH board to make intelligent decisions and take control of the world around it!
 
 ## a wrinkle
 Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
@@ -177,30 +383,6 @@ I am hoping that makes some sense to you. Now let's convert that description to 
 	   digitalWrite(led1, LOW);
 	}
 
-
-
-
-## How to use Logic like a Vulcan:
-One of the things that makes the Adafruit HUZZAH board (and any computer) so useful is that it can make complex decisions based on the input it’s getting. For example, you could make a thermostat that turns on a heater if it gets too cold, or a fan if it gets too hot, and it could even water your plants if they get too dry. In order to make such decisions, the programming language provides a set of logic operations that let you build complex “if” statements. They include:
-
-expression | name | meaning
-:---: | :---: | :---:
-&&	| AND	| A && B is true if BOTH A and B are TRUE.
-\|\|	| OR	|  A \|\| B is true if A or B or BOTH are TRUE.
-!	| NOT	| !A is TRUE if A is FALSE. !A is FALSE if A is TRUE.
-
-You can combine these functions to build complex if() statements. For example suppose we want to turn on an led only if the temperature is between 65 and 75 inclusive and the led should be off otherwise. We can do this using the `AND` operator `&&`:
-
-
-      if ((temperature >= 65)  && (temperature) <=75){
-        digitalWrite(led, HIGH); //so turn on the LED
-      }
-      else
-      {
-        digitalWrite(led, LOW);
-      }
-
-Using these logic operators, you can program your Feather HUZZAH board to make intelligent decisions and take control of the world around it!
 
 
 ## Remixes
