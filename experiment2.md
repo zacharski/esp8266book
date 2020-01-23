@@ -22,7 +22,7 @@ You will need the following parts:
 Add the push button to the same LED circuit from the first experiment. Follow the Fritzing diagram below.
 ![](pics/exp2.png)
 
-> Pay special attention to the component’s markings indicating how to place it on the breadboard. Polarized components can only be connected to a circuit in one direction. Orientation matters for the following component: **LED**
+> Pay special attention to the component’s markings indicating how to place it on the breadboard. Polarized components can only be connected to a circuit in one direction. Orientation matters for the  **LED**
 
 > While buttons aren't necessarily polarized (they can be flipped 180° and still work the same), they do have an orientation that is correct. The legs of the button protrude out of two sides of the button, while the other two side are bare. The sides with the legs should be on either side of the ravine on the breadboard.
 
@@ -31,15 +31,15 @@ Copy and paste this code into the IDE. Then upload.
 
     int led = 2;
     int pushButton = 5;
-
+    
     void setup() {
       pinMode(led, OUTPUT);       // pin 2 is an output pin 
       pinMode(pushButton, INPUT_PULLUP); // pin 5 is an input --the button
     }
-
+    
     void loop() {
       int pushButtonState;
-
+    
       pushButtonState = digitalRead(pushButton);
       if (pushButtonState == LOW) {
         //we pushed the button
@@ -49,7 +49,7 @@ Copy and paste this code into the IDE. Then upload.
       {
         digitalWrite(led, LOW);
       }
-
+    
     }
 
 ## What You Should See
@@ -61,7 +61,7 @@ When you hold down the push button, those warm fuzzy feelings from the first exp
 We have already been using digitalWrite to turn on an LED. So in
 
 	digitalWrite(2, HIGH);
-	
+
 * the first argument tells what pin we are writing to. In this case we are writing to pin 2.
 * the second argument tells what we are writing (or sending). `HIGH` means we are setting pin 2 to a positive voltage. `LOW` means we are setting it to ground.
 
@@ -113,7 +113,7 @@ Again, the braces (`{}`) delimited the block of code that should be executed if 
         digitalWrite(blueLED, HIGH);  //so turn on the blueLED
         digitalWrite(greenLED, HIGH); //so turn off the greenLED
        }
- 
+
 
 
 
@@ -134,209 +134,83 @@ What does the following do?
       }
 
 
-expression | name | example | meaning
-:---: | :---: |  :--: | :---:
-== | EQUAL## a wrinkle
-Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
 
-	if temperature is greater than 90 {
-	    turn on led1
-	    turn on led2
-	}
-	else if the temperature is greater than 70 {
-	     turn on led1
-	     turn off led2
-	}
-	else {
-	   turn off led1
-	   turn off led2
-	}
+## Is it less or fewer?
 
-I am hoping that makes some sense to you. Now let's convert that description to code
+Programming languages allow us to do the normal comparisons we might have seen in math classes:
 
 
-	if (temperature > 90) {
-	    digitalWrite(led1, HIGH);
-	    digitalWrite(led2, HIGH);
-	}
-	else if (temperature > 70) {
-	     digitalWrite(led1, HIGH);
-	     digitalWrite(led1, LOW);
-	}
-	else {
-	   digitalWrite(led1, LOW);
-	   digitalWrite(led1, LOW);
-	}
 
-. | age == 21 | is the value of age equal to 21
-!= | NOT EQUAL | age != 21 | is the value of age not equal to 21
-<  | LESS THAN | temperature < 80 | is temperature less than 80
-expression | name | example | meaning
-138
-:---: | :---: |  :--: | :---:
-139
-== | EQUAL## a wrinkle
-140
-Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
-141
-​
-142
-        if temperature is greater than 90 {
-143
-            turn on led1
-144
-            turn on led2
-145
-        }
-146
-        else if the temperature is greater than 70 {
-147
-             turn on led1
-148
-             turn off led2
-149
-        }
-150
-        else {
-151
-           turn off led1
-152
-           turn off led2
-153
-        }
-154
-​
-155
-I am hoping that makes some sense to you. Now let's convert that description to code
-156
-​
-157
-​
-158
-        if (temperature > 90) {
-159
-            digitalWrite(led1, HIGH);
-160
-            digitalWrite(led2, HIGH);
-161
-        }
-162
-        else if (temperature > 70) {
-163
-             digitalWrite(led1, HIGH);
-164
-             digitalWrite(led1, LOW);
-165
-        }
-166
-        else {
-167
-           digitalWrite(led1, LOW);
-168
-           digitalWrite(led1, LOW);
-169
-        }
-170
-​
-171
-. | age == 21 | is the value of age equal to 21
-172
-!= | NOT EQUAL | age != 21 | is the value of age not equal to 21
-173
-<  | LESS THAN | temperature < 80 | is temperature less than 80
-174
-> | GREATER THAN | temperature > 80 | is temperature greater than 80
-175
-<= | LESS THAN OR EQUAL TO | temperature <= 90 | is the temperature less than or equal to 90 
-176
->= | GREATER THAN OR EQUAL TO | temp >= 90 | is the temp greater than or equal to 90
-177
-​
-178
-So, for example, if the variable `temperature` contained the current temperature then
-179
-​
-180
-​
-181
-      if (temperature < 90) {}
-182
-        digitalWrite(led, HIGH); //so turn on the LED
-183
-      }
-184
-      else
-185
-      {
-186
-        digitalWrite(led, LOW);
-187
-      }
-188
-​
-189
-would turn on the led if the temperature was less than 90.
-190
-> | GREATER THAN | temperature > 80 | is temperature greater than 80
-<= | LESS THAN OR EQUAL TO | temperature <= 90 | is the temperature less than or equal to 90 
->= | GREATER THAN OR EQUAL TO | temp >= 90 | is the temp greater than or equal to 90
+| expression | name                     | example   | meaning                              |
+| ---------- | ------------------------ | --------- | ------------------------------------ |
+| ==         | Equal                    | age == 21 | is age equal to 21?                  |
+| !=         | Not Equal                | age != 21 | Is the value of age not equal to 21? |
+| <          | Less Than                | age < 21  | Is age less than 21?                 |
+| >          | Greater Than             | age > 21  | Is age greater than 21?              |
+| <=         | Less Than or Equal to    | age <= 21 | Is age less than or equal to 21?     |
+| >=         | Greater Than or Equal To | age >= 21 | Is age greater than or equal to 21?  |
 
 So, for example, if the variable `temperature` contained the current temperature then
 
+```
+  if (temperature < 90) {}
+    digitalWrite(led, HIGH); //so turn on the LED
+  }
+  else
+  {
+    digitalWrite(led, LOW);
+  }
 
-      if (temperature < 90) {}
-        digitalWrite(led, HIGH); //so turn on the LED
-      }
-      else
-      {
-        digitalWrite(led, LOW);
-      }
+```
 
 would turn on the led if the temperature was less than 90.
 
+Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let’s gradually convert that English description to code. First:
 
+```
+if temperature is greater than 90 {
+    turn on led1
+    turn on led2
+}
+else if the temperature is greater than 70 {
+     turn on led1
+     turn off led2
+}
+else {
+   turn off led1
+   turn off led2
+}
 
+```
+
+I am hoping that makes some sense to you. Now let’s convert that description to code
+
+```
+if (temperature > 90) {
+    digitalWrite(led1, HIGH);
+    digitalWrite(led2, HIGH);
+}
+else if (temperature > 70) {
+     digitalWrite(led1, HIGH);
+     digitalWrite(led1, LOW);
+}
+else {
+   digitalWrite(led1, LOW);
+   digitalWrite(led1, LOW);
+}
+
+```
 
 ## How to use Logic like a Vulcan:
+
 One of the things that makes the Adafruit HUZZAH board (and any computer) so useful is that it can make complex decisions based on the input it’s getting. For example, you could make a thermostat that turns on a heater if it gets too cold, or a fan if it gets too hot, and it could even water your plants if they get too dry. In order to make such decisions, the programming language provides a set of logic operations that let you build complex “if” statements. They include:
 
 expression | name | meaning
 :---: | :---: | :---:
 &&	| AND	| A && B is true if BOTH A and B are TRUE.
-\|\|	| OR	|  A \|\| B is true if A or B or BOTH are TR## a wrinkle
-Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
+\|\|	| OR	| A \|\| B is true if A or B or BOTH are TRUE 
+!	| NOT	| !A is TRUE if A is FALSE. !A is FALSE if A is TRUE. 
 
-	if temperature is greater than 90 {
-	    turn on led1
-	    turn on led2
-	}
-	else if the temperature is greater than 70 {
-	     turn on led1
-	     turn off led2
-	}
-	else {
-	   turn off led1
-	   turn off led2
-	}
-
-I am hoping that makes some sense to you. Now let's convert that description to code
-
-
-	if (temperature > 90) {
-	    digitalWrite(led1, HIGH);
-	    digitalWrite(led2, HIGH);
-	}
-	else if (temperature > 70) {
-	     digitalWrite(led1, HIGH);
-	     digitalWrite(led1, LOW);
-	}
-	else {
-	   digitalWrite(led1, LOW);
-	   digitalWrite(led1, LOW);
-	}
-
-UE.
-!	| NOT	| !A is TRUE if A is FALSE. !A is FALSE if A is TRUE.
 
 You can combine these functions to build complex if() statements. For example suppose we want to turn on an led only if the temperature is between 65 and 75 inclusive and the led should be off otherwise. We can do this using the `AND` operator `&&`:
 
@@ -350,38 +224,6 @@ You can combine these functions to build complex if() statements. For example su
       }
 
 Using these logic operators, you can program your Feather HUZZAH board to make intelligent decisions and take control of the world around it!
-
-## a wrinkle
-Suppose we want to turn on 2 leds if the temperature is greater than 90, one led if the temperature is greater than 70, and no leds if the temperature is 70 or lower. Let's gradually convert that English description to code. First:
-
-	if temperature is greater than 90 {
-	    turn on led1
-	    turn on led2
-	}
-	else if the temperature is greater than 70 {
-	     turn on led1
-	     turn off led2
-	}
-	else {
-	   turn off led1
-	   turn off led2
-	}
-
-I am hoping that makes some sense to you. Now let's convert that description to code
-
-
-	if (temperature > 90) {
-	    digitalWrite(led1, HIGH);
-	    digitalWrite(led2, HIGH);
-	}
-	else if (temperature > 70) {
-	     digitalWrite(led1, HIGH);
-	     digitalWrite(led1, LOW);
-	}
-	else {
-	   digitalWrite(led1, LOW);
-	   digitalWrite(led1, LOW);
-	}
 
 
 
@@ -399,14 +241,26 @@ Add another LED and another button. Both LEDs should blink 200ms on and 200ms of
 # Part 2 the button and the net
 For this part we are going to use a tutorial developed by Todd Treece at Adafruit. 
 
+### Step 1 - connect your Feather Board to wifi
 
-### Step 1 - connect your Feather Board to UMW's Apogee network.
+One way cool thing about the Feather HUZZAH is that it can connect to the Internet. As with your laptop, to connect to the Internet you first need to connect to wifi. The university is very protective of their wifi and will not allow us to connect to their's so we have three options in order of preference.
+
+
+
+1. Turn on your phone's hotspot and use that (remember the name and password of your hotspot).
+2. Ask the instructors for the information of their phones' hotspot. 
+3. Use the Apogee network.
+
+If you are using options 1 or 2 you can skip the next section. **UMW's APOGEE network**
+
+###  UMW's Apogee network.
+
 Copy and paste this code into the IDE. Then upload.
 
       #include <ESP8266WiFi.h>
-     
+
     void setup(){
-     
+
        Serial.begin(115200);
        delay(500);
      
@@ -427,9 +281,8 @@ A window should open displaying your MAC address.
 Next, login to [myresnet.com](http://myresnet.com) and add a device (your Feather board) by entering in the Mac address.
 
 
+￼Step 2 - get an Adafruit IO account and set up a dashboard
 
-
-### Step 2 - get an Adafruit IO account and set up a dashboard
 For this step, follow the [Adafruit IO Setup instructions](https://learn.adafruit.com/adafruit-io-basics-digital-input/adafruit-io-setup). Once you finish with that page **do not** continue to the wiring the circuit page. 
 
 ### Step 3 - the hardware setup
@@ -437,7 +290,7 @@ Good news. We are going to use the exact same hardware setup we used for the pre
 
 ### Step 4: Arduino setup, Network Config, and Code
 Continue with [the Adafruit tutorial](https://learn.adafruit.com/adafruit-io-basics-digital-input/arduino-setup).
-When you get to the WiFi config section, your wifi ssid and password should be:
+When you get to the WiFi config section, your wifi ssid and password should be the hotspot name and passowrd, or, for Apogee:
 
 	#define WIFI_SSID       "APOGEE"
 	#define WIFI_PASS       ""
@@ -451,7 +304,7 @@ If you are working on this project on your home network you should set these acc
 The Adafruit code assumes you are using a pullup resistor. In our lecture we found that we could eliminate that resistor by editing one line of code. In this case we want to edit the file `adafdruitio_06_digital_in` and change line 36 from
 
      pinMode(BUTTON_PIN, INPUT);
-     
+
 to 
 
       pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -479,7 +332,7 @@ Do a **Save As** on the code for Part Two. We will use that as a starting point 
 Somewhere around line 31 you need to change
 
 	AdafruitIO_Feed *digital = io.feed("digital");
-	
+
 to whatever you named your feed (in my case, 'textMe')
 
 	AdafruitIO_Feed *digital = io.feed("textMe");
@@ -495,7 +348,7 @@ Next, you need to replace the `loop` function with:
       // return if the value hasn't changed
       if(current == last)
         return;
-
+    
       // save the text "Button Pressed to the 'textMe' feed on adafruit io
       if (current == true){
       Serial.print("sending button -> ");
@@ -588,7 +441,7 @@ Finally edit the text message that will be sent:
 Here is what **value** means. In our Arduino code we have the line:
 
 	digital->save("Button Pressed");
-	
+
 So we save the text "Button Pressed" to our feed. So the string *Button Pressed* is the value of the feed and with our IFTTT rule we should get the text message *Button Pressed* sent to us. If our code had:
 
 	digital->save("Don't Forget the Milk");
