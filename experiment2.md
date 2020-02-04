@@ -356,12 +356,13 @@ to whatever you named your feed (in my case, 'textMe')
 Next, you need to replace the `loop` function with:
 
     void loop() {
+       delay(10);
        current = digitalRead(BUTTON_PIN) == LOW;
       // check if something
       if (current != last) {
            // save the text "Button Pressed to the 'textMe' feed on adafruit io
            if (current == true){
-              Serial.print("sending button -> ");
+              Serial.println("sending button -> ");
               digital->save("Button Pressed");
            }
            // store last button state
